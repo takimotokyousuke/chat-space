@@ -1,0 +1,33 @@
+.main-chat
+  .main-chat__group-info
+    .test
+      test
+      .menber
+        Menber:masa
+    .edit
+    = link_to "#", class:'edit' do
+      edit
+  .main-chat__message-list
+    .masa
+      masa
+      .day
+        2020/02/08(Sut) 17:43:01
+    .ohayou
+      おはよう
+    .masa
+      masa
+      .day
+        2020/02/08(Sut) 17:43:01
+    .ohayou
+      今日は夜から雨
+  .main-chat__message-form
+    .type
+      .text
+        type a message
+      .image
+        %label{class:'image'} 
+          =icon('fas', 'image')
+          %input{type: "file",class:"images"}
+    .send
+      .sends
+        Send
