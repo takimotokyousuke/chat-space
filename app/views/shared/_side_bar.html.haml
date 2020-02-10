@@ -6,14 +6,18 @@
       .side-bar__user-name__top-items__name
         masa
       .side-bar__user-name__top-items__icons
-        = link_to "#", class:'icon' do
-          =icon('fas', 'edit',)
-        = link_to edit_user_path(current_user),class:'icon'  do
-          =icon('fas', 'cog',)
+        = link_to new_group_path do
+          = link_to new_group_path class:'icon' do
+            =icon('fas', 'edit',)
+          = link_to edit_user_path(current_user),class:'icon'  do
+            =icon('fas', 'cog',)
   .side-bar__group-list 
-    .side-bar__group-list__text 
-      .name
-        techcamp
-      .message
-        まだメッセージはありません
+    - current_user.groups.each do |group|
+      .group
+        = link_to '#' do
+          .group__name
+            =group.name 
+          .group__message
+            メッセージはまだありません。
+    
 
