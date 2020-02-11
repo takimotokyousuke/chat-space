@@ -1,33 +1,21 @@
 .main-chat
   .main-chat__group-info
     .test
-      test
+      = @group.name
       .menber
-        Menber:masa
+        - @group.users.each do |user|
+          = user.name
     .edit
-    = link_to "#", class:'edit' do
-      edit
+      = link_to "/groups/#{@group.id}/edit",method: :get,class:'edit' do
+        edit
   .main-chat__message-list
-    .masa
-      masa
-      .day
-        2020/02/08(Sut) 17:43:01
-    .ohayou
-      おはよう
-    .masa
-      masa
-      .day
-        2020/02/08(Sut) 17:43:01
-    .ohayou
-      今日は夜から雨
-  .main-chat__message-form
-    .type
-      .text
-        type a message
-      .image
-        %label{class:'image'} 
-          =icon('fas', 'image')
-          %input{type: "file",class:"images"}
-    .send
-      .sends
-        Send
+    .message
+      =render @messages
+  .forms
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'forms__message', placeholder: 'type a message'
+      .forms__mask
+        = f.label :image, class: 'forms__mask__image' do
+          = icon('fas', 'image', class: 'forms__mask__image')
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'forms__send'
