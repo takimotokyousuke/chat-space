@@ -9,7 +9,24 @@
   &__group-list{
     background-color: #2f3e51;
     height: calc(100vh - 100px);
-    &__text{
+
+    .group{
+      a{
+        font-size: 15px;
+        text-decoration: none;
+          .group__name{
+            color: #fafafa;
+            padding-top: 20px;
+            padding-left: 20px;
+          }
+          .group__message{
+            color: #fafafa;
+            padding-left: 20px;
+          }
+      }
+    }
+
+    &__group_name{
       color: white;
       padding-top: 20px;
       margin-left: 20px;
@@ -91,81 +108,72 @@
      height: calc(100vh - 190px);
      top: 100px;
      padding-left: 40px;
-     .masa{
+     overflow: scroll;
+     .upper-message{
        color: 333333;
        font-size: 16px;
        padding-top: 35px;
        display: flex;
-       .day{
+       .upper-message__date{
          color: #999999;
          font-size: 12px;
          margin-left: 10px;
        }
      }
-     .ohayou{
+     .lower-message{
        color: #434A54;
        font-size: 14px;
        margin-top: 12px;
-     .mes{
+     .user-name{
        color: #333333;
        font-size: 16px;
        margin-top: 46px;
        display: flex;
-       .days{
-        color: #999999;
-        font-size: 12px;
-        margin-left: 10px;
-       }
-     .mess{
+     .lower-message__content{
        color: #434A54;
        font-size: 14px;
        margin-top: 12px;
        }
-       }
-     }
-   }
-   &__message-form{
-     background-color: #d2d2d2;
-     height: 90px;
-     top: calc(100vh - 90px);
-     padding-top: 10px;
-     padding-left: 40px;
-     display: flex;
-     justify-content: space-between;
+      }
+    }
+  }
+}    
 
-     .type{
-       background-color: white;
-       height: 50px;
-       width: 100%;
-       position: relative;
-       margin-top: 12px;
-       .text{
-         position: absolute;
-         top: 10px;
-         left: 10px;
-         color: #999999;
-       }
-       .image{
-         text-align: right;
-         line-height: 50px;
-         padding-right: 10px;
-       }
-       .images{
-         display: none;
-       }
-     }
-     .send{
-       height: 50px;
-       margin-top: 12px;
-       margin-right: 40px;
-       margin-left: 15px;
-       background-color: #38aef0;
-       .sends{
-         font-size: 15px;
-         color: #fafafa;
-         padding: 10px;
-       }
-     }
-   }
-   
+.forms{
+  background-color:#d2d2d2;
+  box-sizing: border-box;
+  height: 90px;
+  padding-top: 10px;
+  padding-left: 50px;
+  &__message{
+   height: 50px;
+   float: left;
+   width: calc(100% - 155px);
+   padding-left: 10px;
+   position: relative;
+   margin-right: 15px;
+  }
+  &__mask {
+    float: left;
+    height: 50px;
+    position: absolute;
+    right: 200px;
+    &__image {
+      font-size: 20px;
+      line-height: 50px;
+      }
+    }
+    &__send{
+      background-color: #38aef0;
+      color: white;
+      font-size: 16px;
+      float: right;
+      height: 50px;
+      margin-right: 40px;
+      width: 100px;
+  }
+  }
+
+.hidden {
+  display: none;
 }
