@@ -9,7 +9,7 @@
       = link_to "/groups/#{@group.id}/edit",method: :get,class:'edit' do
         edit
   .main-chat__message-list
-    .message
+    .messages
       =render @messages
   .forms
     = form_for [@group, @message] do |f|
