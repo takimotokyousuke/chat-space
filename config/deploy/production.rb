@@ -60,3 +60,4 @@
 #     # password: "please use keys"
 #   }
 server '3.20.29.100', user: 'ec2-user',roles: %w{app db web}
+config.consider_all_requests_local = true
