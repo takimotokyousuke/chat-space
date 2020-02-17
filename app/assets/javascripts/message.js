@@ -55,6 +55,7 @@ $(function(){
     e.preventDefault();
     var formData = new FormData(this);
     var url = $(this).attr('action');
+    
     $.ajax({
       url: url,
       type: 'POST',
@@ -66,7 +67,7 @@ $(function(){
     .done(function(data){
       var html = buildHTML(data);
       $('.messages').append(html);
-      $('form')[0].reset
+      $('#new_message')[0].reset()
       $('.main-chat__message-list').animate({ scrollTop: $('.main-chat__message-list')[0].scrollHeight});
       $('.forms__send').prop('disabled',false);
     })
@@ -90,12 +91,13 @@ $(function(){
           insertHTML += buildHTML(message)
         });
         $('.messages').append(insertHTML);
-        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
+        $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       }
     })
     .fail(function(){
-      alert('送信されない')
+      alert('送信されない');
     });
+    return false;
   };
   if (document.location.href.match(/\/groups\/\d+\/messages/)) {
     setInterval(reloadMessages, 2000);

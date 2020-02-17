@@ -15,5 +15,10 @@
 
 # Ignore Byebug command history file.
 .byebug_history
+<<<<<<< Updated upstream
 /public/uploads
 config/secrets.yml
+=======
+
+public/uploads/*
+>>>>>>> Stashed changes
